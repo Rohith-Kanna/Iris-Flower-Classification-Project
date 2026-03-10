@@ -1,143 +1,112 @@
-🌸 Iris Flower Classification Web App
+# 🌸 Iris Flower Classification Web App
 
 An end-to-end Machine Learning web application that predicts the species of an Iris flower based on user-provided measurements.
-This project was built as a hands-on learning exercise to understand the complete ML workflow — from model training to deployment.
 
-The application allows users to sign up, log in, enter flower measurements, choose a model, and view their prediction history.
+This project was built to understand the **complete ML workflow — from model training to deployment**.
 
-🔗 Live Application:
+🔗 **Live Application**  
 https://ml-model-deployment-irisdetection.streamlit.app/
 
-📌 Project Overview
+---
 
-The goal of this project was to move beyond training models in notebooks and learn how to deploy a machine learning model as an interactive web application.
+# 📌 Project Overview
+
+The goal of this project was to move beyond training models in notebooks and build a **complete ML application**.
 
 The project covers the full pipeline:
 
-Data exploration and preprocessing
+1. Data exploration and preprocessing  
+2. Training machine learning models  
+3. Saving trained models for reuse  
+4. Building an interactive web application  
+5. Adding login and signup functionality  
+6. Storing user data using a database  
+7. Deploying the application online  
 
-Training multiple machine learning models
+---
 
-Saving trained models using serialization
+# 🧠 Machine Learning Models Used
 
-Building an interactive user interface
+Two models were trained and used in the application.
 
-Adding authentication functionality
+## Random Forest Classifier
+- Ensemble learning method
+- Uses multiple decision trees
+- Provides strong performance on structured data
 
-Storing user data and predictions using a database
+## Logistic Regression
+- Linear classification model
+- Fast and interpretable
+- Used as a baseline model
 
-Deploying the application to the web
+The trained models were saved using **pickle** and loaded into the Streamlit application for predictions.
 
-🧠 Machine Learning Models Used
+---
 
-Two models were implemented and compared:
+# 🌼 Dataset
 
-Random Forest Classifier
+The project uses the classic **Iris Flower Dataset**.
 
-Ensemble learning method
+### Input Features
+- Sepal Length
+- Sepal Width
+- Petal Length
+- Petal Width
 
-Uses multiple decision trees
+### Target Classes
+- Iris-setosa
+- Iris-versicolor
+- Iris-virginica
 
-Produces strong performance on structured data
+---
 
-Logistic Regression
+# 🖥️ Application Features
 
-Linear classification model
+## 👤 User Authentication
+- Users can **sign up and create an account**
+- Existing users can **log in**
+- User credentials are stored in the database
 
-Fast and interpretable
+## 🌸 Flower Prediction
+Users can:
 
-Good baseline model
+1. Enter flower measurements
+2. Choose a prediction model
+3. Get the predicted Iris species
 
-Both models were trained using the Iris dataset, and the trained models were saved using pickle so they could be reused in the web application.
+## 📊 Prediction History
+Every prediction made by a user is stored and displayed.
 
-🌼 Dataset
+The history shows:
+- Input values
+- Selected model
+- Predicted species
+- Timestamp
 
-The project uses the classic Iris Flower Dataset, which contains measurements of iris flowers.
+---
 
-Features used for prediction
+# 🗄️ Database
 
-Sepal Length
-
-Sepal Width
-
-Petal Length
-
-Petal Width
-
-Target
-
-Iris-setosa
-
-Iris-versicolor
-
-Iris-virginica
-
-🖥️ Application Features
-
-The deployed web application provides the following functionality:
-
-👤 User Authentication
-
-Users can sign up and create an account
-
-Existing users can log in
-
-User credentials are stored in a database
-
-🌸 Flower Prediction
-
-Users can enter:
-
-Sepal Length
-
-Sepal Width
-
-Petal Length
-
-Petal Width
-
-They can also choose which model to use:
-
-Random Forest
-
-Logistic Regression
-
-The application then predicts the species of the iris flower.
-
-📊 Prediction History
-
-Every prediction made by a user is stored in the database.
-
-Users can view:
-
-Input values used
-
-Model selected
-
-Predicted species
-
-Timestamp of prediction
-
-🗄️ Database
-
-This project uses SQLite as a lightweight database.
+The application uses **SQLite** as a lightweight database.
 
 Two tables are used:
 
-Users Table
-
+### Users Table
 Stores login credentials.
 
+```
 users
 -----
 id
 username
 password
 created_at
-Predictions Table
+```
 
+### Predictions Table
 Stores user prediction history.
 
+```
 predictions
 -----------
 id
@@ -149,100 +118,119 @@ petal_width
 predicted_species
 model_used
 timestamp
+```
 
-SQLite was chosen because it is simple, lightweight, and does not require a separate database server.
+SQLite was chosen because it is **lightweight, simple, and does not require a server**.
 
-⚙️ Technologies Used
-Programming
+---
 
-Python
+# ⚙️ Technologies Used
 
-Machine Learning
+### Programming
+- Python
 
-scikit-learn
+### Machine Learning
+- scikit-learn
+- pandas
+- numpy
 
-pandas
+### Web Application
+- Streamlit
 
-numpy
+### Database
+- SQLite
 
-Web Application
+### Version Control
+- Git
+- GitHub
 
-Streamlit
+### Deployment
+- Streamlit Community Cloud
 
-Database
+---
 
-SQLite
+# 📂 Project Structure
 
-Version Control
-
-Git
-
-GitHub
-
-Deployment
-
-Streamlit Community Cloud
-
-📂 Project Structure
+```
 ML-Model-Deployment/
 │
-├── app.py                         # Streamlit web application
-├── iris_app.db                    # SQLite database
-├── label_encoder.pkl              # Saved label encoder
-├── random_forest_model.pkl        # Trained Random Forest model
-├── logistic_regression_model.pkl  # Trained Logistic Regression model
-├── IrisDataSet.csv                # Dataset
-├── MLModelTrain.ipynb             # Model training notebook
-├── requirements.txt               # Dependencies
-└── README.md                      # Project documentation
-🚀 How to Run the Project Locally
-1. Clone the repository
+├── app.py
+├── iris_app.db
+├── label_encoder.pkl
+├── random_forest_model.pkl
+├── logistic_regression_model.pkl
+├── IrisDataSet.csv
+├── MLModelTrain.ipynb
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# 🚀 Running the Project Locally
+
+### 1. Clone the repository
+
+```
 git clone https://github.com/Rohith-Kanna/ML-Model-Deployment.git
 cd ML-Model-Deployment
-2. Install dependencies
+```
+
+### 2. Install dependencies
+
+```
 pip install -r requirements.txt
-3. Run the Streamlit application
+```
+
+### 3. Run the application
+
+```
 streamlit run app.py
+```
 
-The application will open in your browser.
+The web app will open in your browser.
 
-🌍 Deployment
+---
 
-The application is deployed using Streamlit Community Cloud, which allows quick deployment of Python apps directly from GitHub.
+# 🌍 Deployment
 
-Deployment steps included:
+The project is deployed using **Streamlit Community Cloud**.
 
-Push project to GitHub
+Deployment process:
 
-Create a requirements.txt
+1. Push project to GitHub
+2. Add a `requirements.txt`
+3. Connect repository to Streamlit Cloud
+4. Deploy the Streamlit application
 
-Connect repository to Streamlit Cloud
+---
 
-Deploy the app
+# ⚠️ Security Note
 
-⚠️ Security Note
+Passwords in this project are stored in **plain text** for learning purposes.
 
-Passwords in this project are stored in plain text for learning purposes.
+In real-world applications, passwords should be **hashed using libraries such as bcrypt**.
 
-In real-world applications, passwords should be securely hashed using tools such as bcrypt.
+---
 
-📈 Future Improvements
+# 📈 Future Improvements
 
-Some possible improvements for this project include:
+Possible improvements for this project:
 
-Password hashing for improved security
+- Password hashing for improved security
+- Admin dashboard
+- Data visualizations
+- Additional machine learning models
+- Cloud database integration
+- Multi-page Streamlit application
 
-Admin dashboard for viewing overall predictions
+---
 
-Graph-based visualization of user inputs
+# 👨‍💻 Author
 
-Adding more ML models
+**Rohith Kanna Gv (RK)**  
+Computer Science Engineering Student
 
-Migrating to a cloud database
+---
 
-Multi-page Streamlit application
-
-
-⭐ If you found this project interesting
-
-Feel free to star the repository and try out the live application!
+⭐ If you found this project interesting, feel free to **star the repository**.
