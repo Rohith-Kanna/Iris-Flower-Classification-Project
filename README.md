@@ -226,11 +226,4 @@ Possible improvements for this project:
 
 ---
 
-# 👨‍💻 Author
-
-**Rohith Kanna Gv (RK)**  
-Computer Science Engineering Student
-
----
-
 ⭐ If you found this project interesting, feel free to **star the repository**.
